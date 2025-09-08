@@ -25,7 +25,15 @@
           var currentFontSize = parseInt(
             window.getComputedStyle(yesButton).fontSize
           );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+          yesButton.style.fontSize = currentFontSize + 1.5 + "px"; // Increase font size by 10px
+
+          // Clone the Yes button
+          var clonedButton = yesButton.cloneNode(true);
+          clonedButton.style.position = 'absolute';
+          clonedButton.style.top = Math.random() * 80 + 'vh'; // Random top position (0-80% of viewport height)
+          clonedButton.style.left = Math.random() * 80 + 'vw'; // Random left position (0-80% of viewport width)
+          clonedButton.style.zIndex = '10'; // Ensure it's above other elements
+          document.body.appendChild(clonedButton);
         });
     </script>
   </body>
